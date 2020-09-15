@@ -40,8 +40,8 @@ The goal of this challenge are to :
 ```
  try:
     clean_movies = [clean_movie(movie) for movie in wiki_movies]
-    except NameError:
-           pass
+ except NameError:
+        pass
 ```
 ### Assumption 3: At least one data of release_date_wiki is not match with release_date_kaggle  
 - Based on previous analysis this clean process has added, in case there's no mismatch data the process can be ignored
