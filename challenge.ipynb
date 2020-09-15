@@ -168,7 +168,7 @@
     "    movies_df = pd.merge(wiki_movies_df, kaggle_metadata, on='imdb_id', suffixes=['_wiki','_kaggle'])\n",
     "    try:\n",
     "        movies_df = movies_df.drop(movies_df[(movies_df['release_date_wiki'] > '1996-01-01') & (movies_df['release_date_kaggle'] < '1965-01-01')].index)\n",
-    "    except IndexError:\n",
+    "    except KeyError:\n",
     "           pass \n",
     "    movies_df.drop(columns=['title_wiki','release_date_wiki','Language','Production company(s)'], inplace=True)\n",
     "    # fill missing kaggle data with wiki data \n",
