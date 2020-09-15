@@ -44,12 +44,12 @@ The goal of this challenge are to :
         pass
 ```
 ### Assumption 3: At least one data of release_date_wiki is not match with release_date_kaggle  
-- Based on previous analysis this clean process has added, in case there's no mismatch data the process can be ignored
+- Based on previous analysis this clean process has added, since df.drop only drop existing value if there's no mismatch data the process can be ignored
 ```
  try:
      movies_df = movies_df.drop(movies_df[(movies_df['release_date_wiki'] > '1996-01-01') & \
      (movies_df['release_date_kaggle'] < '1965-01-01')].index)
- except IndexError:
+ except KeyError:
         pass 
 ```
 ### Assumption 4: Load movies_df data into SQL database for the first time without errors
